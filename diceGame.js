@@ -12,7 +12,7 @@ function solution(a, b) {
     }
     // a와 b 모두 홀수가 아니라면 |a - b| 점을 얻습니다.
     if (a % 2 == 0 && b % 2 == 0) {
-        aconsole.logert("모두 짝수!");
+        console.log("모두 짝수!");
         console.log("|a-b| = ");
         answer = Math.abs(a-b);
     }
