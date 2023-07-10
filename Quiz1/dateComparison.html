@@ -7,6 +7,22 @@
     <title>Date Comparison Quiz</title>
 </head>
 <body>
+    <div id="content"></div>
     <script src="./dateComparison.js"></script>
+    <script>
+        fetch('./dateComparison.js') // js 파일의 경로를 입력하세요.
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("HTTP error " + response.status);
+            }
+            return response.text();
+        })
+        .then(text => {
+            document.getElementById('content').innerText = text;
+        })
+        .catch(function(error) {
+            console.log('Fetch Error: ', error);
+        });
+    </script>
 </body>
 </html>
