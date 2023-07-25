@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SameNumberFind Quiz</title>
+</head>
+<body>
+    <pre id="content"></pre>
+    <script src="./findKim.js"></script>
+    <script>
+        fetch('./findKim.js') // js 파일의 경로를 입력하세요.
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("HTTP error " + response.status);
+            }
+            return response.text();
+        })
+        .then(text => {
+            document.getElementById('content').innerText = text;
+        })
+        .catch(function(error) {
+            console.log('Fetch Error: ', error);
+        });
+    </script>
+</body>
+</html>
